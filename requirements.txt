@@ -1,0 +1,9 @@
+Flask>=2.0
+pandas
+numpy
+yfinance
+matplotlib
+seaborn
+scipy
+requests
+gunicorn
