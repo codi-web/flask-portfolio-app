@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simulador de Portafolio</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Optimizador de Portafolios</h1>
+    <form method="POST">
+        <label>Activos (ej: AAPL,MSFT):</label>
+        <input type="text" name="symbols" required><br>
+        <label>Fecha Inicio:</label>
+        <input type="date" name="start_date" required><br>
+        <label>Fecha Fin:</label>
+        <input type="date" name="end_date" required><br>
+        <label>Simulaciones:</label>
+        <input type="number" name="simulations" value="10000" required><br>
+        <label>Inversión (€):</label>
+        <input type="number" name="investment" value="10000" required><br>
+        <label>Tasa libre de riesgo (%):</label>
+        <input type="number" name="risk_free" value="2.32" step="0.01"><br>
+        <label>Tipo de gráfico:</label>
+        <select name="graph_type">
+            {% for g in graph_types %}<option value="{{g}}">{{g}}</option>{% endfor %}
+        </select><br>
+        <input type="submit" value="Ejecutar">
+    </form>
+</body>
+</html>
