@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Resultados del Análisis</h1>
+    <p><strong>Activos:</strong> {{ symbols|join(', ') }}</p>
+    <ul>
+        <li>Retorno esperado: {{ metrics.ret_opt|round(4) }}</li>
+        <li>Volatilidad: {{ metrics.vol_opt|round(4) }}</li>
+        <li>Sharpe: {{ metrics.shp_opt|round(2) }}</li>
+        <li>Sortino: {{ metrics.sortino_opt|round(2) }}</li>
+        <li>CVaR: {{ metrics.cvar_opt|round(4) }}</li>
+    </ul>
+    <img src="data:image/png;base64,{{ graph_img }}">
+    <br><a href="/">⬅ Volver</a>
+</body>
+</html>
